@@ -11,9 +11,7 @@ namespace AbstractGeometry
 		public Square
 			(
 			double side, int start_x, int start_y, int line_width, System.Drawing.Color color
-			):base(side, side, start_x, start_y, line_width, color)
-		{
-			SideA = side;
-		}
+			):base(side, side, start_x, start_y, line_width, color) { }
+		
 	}
 }

@@ -31,6 +31,10 @@ namespace AbstractGeometry
 		{
 			Radius = radius;
 		}
+		public double GetDiametr()
+		{
+			return radius * 2;
+		}
 		public override double GetArea()
 		{
 			return Math.PI * radius * radius;
@@ -41,8 +45,14 @@ namespace AbstractGeometry
 		}
 		public override void Draw(PaintEventArgs e)
 		{
-			Pen pen = new Pen(Color, LineWidth);
-			e.Graphics.DrawEllipse(pen, StartX, StartY,  2 * (float)radius,  2 * (float)radius);
+			System.Drawing.Pen pen = new System.Drawing.Pen(Color, LineWidth);
+			e.Graphics.DrawEllipse(pen, StartX, StartY,  (float)GetDiametr(), (float)GetDiametr());
+		}
+		public override void info(PaintEventArgs e)
+		{
+			Console.WriteLine(this.GetType());
+			Console.WriteLine($"Раиус круга: {Radius}");
+			base.info(e);
 		}
 	}
 }
