@@ -59,7 +59,7 @@ namespace AbstractGeometry
 			Pen pen = new Pen(Color, LineWidth);
 			e.Graphics.DrawRectangle(pen, StartX, StartY, (int)SideA, (int)SideB);
 		}
-		public override void info(PaintEventArgs e)
+		public override void Info(PaintEventArgs e)
 		{
 			Console.WriteLine(this.GetType());
 			if (this.GetType() == typeof(AbstractGeometry.Rectangle))
@@ -71,7 +71,7 @@ namespace AbstractGeometry
 		{
 			Console.WriteLine($"Длина стороны: {side_b}");
 		}
-			base.info(e);
+			base.Info(e);
 		}
 	}
 	}

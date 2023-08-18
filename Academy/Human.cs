@@ -22,7 +22,7 @@ namespace Academy
 
 		public override string ToString()
 		{
-			return $"{LastName}	{FirstName} {Age} лeт.	";
+			return $"{this.GetType()}:\t {LastName}, {FirstName}, {Age} лeт.";
 
 		}
 		public virtual void Print()

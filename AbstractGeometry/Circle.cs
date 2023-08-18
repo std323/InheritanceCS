@@ -17,6 +17,7 @@ namespace AbstractGeometry
 		public double Radius 
 		{ 
 			get { return radius; } 
+
 			set 
 			{
 				if (value < 50) value = 50;
@@ -48,11 +49,11 @@ namespace AbstractGeometry
 			System.Drawing.Pen pen = new System.Drawing.Pen(Color, LineWidth);
 			e.Graphics.DrawEllipse(pen, StartX, StartY,  (float)GetDiametr(), (float)GetDiametr());
 		}
-		public override void info(PaintEventArgs e)
+		public override void Info(PaintEventArgs e)
 		{
 			Console.WriteLine(this.GetType());
 			Console.WriteLine($"Раиус круга: {Radius}");
-			base.info(e);
+			base.Info(e);
 		}
 	}
 }

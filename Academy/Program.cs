@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
 
 namespace Academy
 {
@@ -39,15 +40,22 @@ namespace Academy
 				new Graduate("Schrader", "Hank", 40, "Criminalistic", "OBN", 80, 70, "How to catch Heisenberg"),
 			    tommi, diaz
 			};
-			for(int i=0; i < group.Length; i++)
+			string currentDirectory = Directory.GetCurrentDirectory();
+			string filename = "group.txt";
+			StreamWriter streamWriter = new StreamWriter(filename);
+			for (int i=0; i < group.Length; i++)
 			{
-				group[i].Print();
+				Console.WriteLine(group[i]); 
+				streamWriter.WriteLine(group[i]);
+				//group[i].Print();
 				Console.WriteLine(delimiter);
 
 				//Console.WriteLine(group[i]);
 
 			}
-
+			streamWriter.Close();
+			string cmd = currentDirectory + "\\" + filename;
+			System.Diagnostics.Process.Start("notepad", cmd);
 		}
 	}
 }

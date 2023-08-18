@@ -57,7 +57,7 @@ namespace AbstractGeometry
 		public abstract double GetPerimeter();
 		public abstract void Draw(PaintEventArgs e);
 
-		public virtual void info(PaintEventArgs e)
+		public virtual void Info(PaintEventArgs e)
 		{
 			Console.WriteLine($"Площадь фигуры: {this.GetArea()}");
 			Console.WriteLine($"Периметр фигуры: {this.GetPerimeter()}");

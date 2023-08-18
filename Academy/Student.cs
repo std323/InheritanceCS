@@ -26,7 +26,7 @@ namespace Academy
 		}
 		public override string ToString()
 		{
-			return base.ToString() + $"{Speciality} {Group} {Rating} {Attendance}";
+			return base.ToString() + ",\t"+ $" {Speciality},\t{Group},\t{Rating},\t{Attendance}";
 		}
 		public override void Print()
 		{

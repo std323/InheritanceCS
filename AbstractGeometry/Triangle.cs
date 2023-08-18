@@ -11,31 +11,16 @@ namespace AbstractGeometry
 {
 	internal abstract class Triangle : Shape 
 	{
-		public static double height;
-		
-
-		public double Height
-		{
-			get { return height; }
-			set
-			{ 
-				if (value < 20) value = 20;
-				if (value > 200) value = 200;
-				height = value; 
-			}
-		}
-
-		public Triangle
+		protected Triangle
 			(
 			int start_x, int start_y, int line_width, Color color)
-			:base(start_x, start_y, line_width, color)
+			:base(start_x, start_y, line_width, color) { }
+		public abstract double GetHeight();
+		public override void Info(PaintEventArgs e)
 		{
-			Height = height;
+			Console.WriteLine($"Высота треугольника: {GetHeight()}");
+			base.Info(e);
 		}
-		
-
-
-
 
 
 	}
