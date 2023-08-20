@@ -19,6 +19,12 @@ namespace Academy
 		{
 			Grade = grade;
 		}
+		public override void Init(string[] values)
+		{
+			base.Init(values);
+			Grade = Convert.ToInt32(values[9]);
+		}
+
 		public override string ToString()
 		{
 			return base.ToString() + $", {Grade}";

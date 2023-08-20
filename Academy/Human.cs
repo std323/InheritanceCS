@@ -10,16 +10,21 @@ namespace Academy
 	internal class Human
 	{
 
-		string LastName { get; set; }
-		string FirstName { get; set; }
-		int Age { get; set; }
+		public string LastName { get; set; }
+		public string FirstName { get; set; }
+		public int Age { get; set; }
 		public Human(string lastName, string firstName, int age)
 		{
 			LastName = lastName;
 			FirstName = firstName;
 			Age = age;
 		}
-
+		public virtual void Init(string[] values)
+		{
+			LastName = values[1].TrimStart().TrimEnd();
+			FirstName = values[2].TrimStart().TrimEnd();
+			Age = Convert.ToInt32(values[3].Split(' ')[1]);
+		}
 		public override string ToString()
 		{
 			return $"{this.GetType()}:\t {LastName}, {FirstName}, {Age} лeт.";
